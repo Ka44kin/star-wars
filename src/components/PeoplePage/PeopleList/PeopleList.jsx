@@ -11,7 +11,6 @@ const PeopleList = ({people}) => {
                         <img className={styles.person__photo } src={img} alt={name}/>
                         <p>{name}</p>
                     </a>
-                    
                 </li>
              )}
         </ul>
