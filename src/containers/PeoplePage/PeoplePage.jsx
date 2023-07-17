@@ -52,7 +52,6 @@ const PeoplePage = ({setErrorApi }) => {
 
     return (
             <>
-                
                 <PeopleNavigation
                     getResource = { getResource }
                     prevPage = {prevPage}
@@ -61,7 +60,6 @@ const PeoplePage = ({setErrorApi }) => {
                 />
                 {people && <PeopleList people = {people} />}
             </>
-                
     )
 }
 

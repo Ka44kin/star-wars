@@ -22,9 +22,12 @@
 
   --font-family-main: sans-serif;
 
+  --spacing-ultra-small: 5px;
   --spacing-small: 10px;
   --spacing-medium: 20px;
   --spacing-large: 30px;
+
+  --margin-list: 7px;
 
   --theme-default-header: #cccc46;
   --theme-default-bgimage: url(@static/death_star.jpeg);
