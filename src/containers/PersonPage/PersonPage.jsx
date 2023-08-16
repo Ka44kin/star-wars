@@ -3,8 +3,6 @@ import styles from './PersonPage.module.css';
 
 import { withErrorApi } from '@hoc-helpers/withErrorApi';
 
-import React, { Suspense, useEffect, useState } from 'react';
-
 import PersonInfo  from '@components/PersonPage/PersonInfo';
 import PersonPhoto  from '@components/PersonPage/PersonPhoto';
 import PersonLinkBack from '@components/PersonPage/PersonLinkBack';
@@ -14,8 +12,12 @@ import { getApiResource } from '@utils/network';
 import { getPeopleImage } from '@services/getPeopleData';
 import { API_PERSON } from '@constants/api';
 
+import React, { Suspense, useEffect, useState } from 'react';
 
 import { useParams } from 'react-router';
+
+import { useSelector } from 'react-redux';
+
 
 const PersonFilms = React.lazy(() => import ('@components/PersonPage/PersonFilms/PersonFilms'))
 
@@ -26,13 +28,15 @@ const PersonPage = ({setErrorApi}) => {
     const[personName, setPersonName] = useState(null);
     const[personPhoto, setPersonPhoto] = useState(null);
     const[personFilms, setPersonFilms] = useState(null);
-    
-    useEffect(() => {
+    const[personFavorite, setPersonFavorite] = useState(false);
 
-        (async() =>{
-            
+    const storeData = useSelector(state => state.favoriteReducer);
+
+    useEffect(() => {
+        (async() => {
             const res = await getApiResource(`${API_PERSON}/${id}/`);
-            console.log(`${API_PERSON}/${id}/`, res);
+
+            setPersonFavorite(!!storeData[id]);
 
             if (res){
                 setPersonInfo([
@@ -64,8 +68,11 @@ const PersonPage = ({setErrorApi}) => {
                 <span className={styles.person__name}>{personName}</span>
                 <div className={styles.container}>
                     <PersonPhoto 
+                        personId = {id}
                         personPhoto = {personPhoto}
                         personName = {personName}
+                        personFavorite = {personFavorite}
+                        setPersonFavorite = {setPersonFavorite}
                     />
                     {personInfo && <PersonInfo personInfo={personInfo} /> }
 

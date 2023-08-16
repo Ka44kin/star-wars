@@ -1,26 +1,4 @@
-// import UiButton from "./UiButton";
 
-// export default {
-//     title : Ui-Kit/UiButton,
-//     component : UiButton
-// }
-// import { Meta, StoryObj } from '@storybook/react';
-
-// import { UiButton, ButtonProps } from './UiButton';
-
-// const meta: Meta<typeof UiButton> = {
-//   component: UiButton,
-// };
-
-// export default meta;
-// type Story = StoryObj<typeof Button>;
-
-// export const Primary: Story = {
-//   args: {
-//     primary: true,
-//     label: 'Button',
-//   },
-// };
 import UiButton from './UiButton';
 
 export default {
