@@ -4,14 +4,19 @@
   --color-dark-gray: #10100e;
   --color-yellow: #ff0;
   --color-blue: #6a83fb;
-  --color-violet: #ae72c2;
+  --color-violet: #b706f3;
   --color-red: #f1164c;
 
   --border-radius-small: 3px;
 
-  --text-shadow-yellow: 
+  --text-shadow: 
     0 0 2px var(--color-white),
     0 0 40px var(--color-blue);
+
+  --box-shadow:
+      0 16px 24px 2px rgba(0, 0, 0, 0.5), 
+      0 6px 30px 5px rgba(0, 0, 0, 0.1), 
+      0 8px 10px -5px rgba(0, 0, 0, 0.2);
 
   --font-bold: 600;
 
@@ -30,8 +35,16 @@
 
   --margin-list: 7px;
 
-  --theme-default-header: #cccc46;
-  --theme-default-bgimage: url(@static/death_star.jpeg);
+  --theme-jedy-header: #002aff;
+  --theme-sith-header: #ff0000;
+  --theme-standart-header: #f0f036;
+
+  --theme-jedy-bgimage: linear-gradient(to top, #1925f2, #0029ba, #002381, #001949, #070816);
+  --theme-sith-bgimage: linear-gradient(to top, #f21919, #cc004a, #92005e, #501a5a, #18183e);
+  --theme-standart-bgimage: url(@static/death_star.jpeg);
+
+  --theme-default-header: var(--theme-standart-header);
+  --theme-default-bgimage: var(--theme-standart-bgimage);
 
   --transition: .4s;
 }

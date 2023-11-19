@@ -1,0 +1,81 @@
+.container {
+    --border-radius: 10px;
+
+    --color-jedy:   #1905ef;
+    --color-sith:    #d82228;
+    --color-neutral: #ffff00;
+
+    --color-shadow-jedy:   rgba(26, 8, 161, 0.4);
+    --color-shadow-sith:    rgba(216, 34, 40, .4);
+    --color-shadow-neutral: rgba(224, 224, 81, 0.4);
+}
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+.item {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 450px;
+    margin-right: var(--spacing-medium);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+    cursor: pointer;
+}
+.item__header {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    margin-bottom: var(--spacing-small);
+    font-size: var(--font-size-subheader);
+    text-align: center;
+}
+.item__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    border-radius: var(--border-radius);
+}
+
+.item__jedy {
+    text-shadow: 0 0 5px currentColor;
+    color: var(--color-jedy);
+}
+.item__sith {
+    text-shadow: 0 0 5px currentColor;
+    color: var(--color-sith);
+}
+.item__neutral {
+    text-shadow: 0 0 5px currentColor;
+    color: var(--color-neutral);
+}
+
+.item__jedy:hover {
+    box-shadow: 0 0 7px 2px var(--color-shadow-jedy);
+}
+.item__sith:hover {
+    box-shadow: 0 0 7px 2px var(--color-shadow-sith);
+}
+.item__neutral:hover {
+    box-shadow: 0 0 7px 2px var(--color-shadow-neutral);
+}
+
+@media screen and (max-width: 900px) {
+    .item {
+        width: 200px;
+        height: 350px;
+    }
+}
+@media screen and (max-width: 750px) {
+    .item {
+        height: 300px;
+        margin: var(--spacing-small);
+    }
+}
